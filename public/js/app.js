@@ -1,9 +1,5 @@
 $(document).ready(function(){
-	var recipes = new app.RecipeCollection();
-	recipes.fetch();
-	var layout = new app.MenuLayout({
-		collection: recipes
-	});
-	layout.render();
-	$('body').append(layout.el);
+	var menu = new app.MenuView();
+	menu.render();
+	$('body').append(menu.el);
 });

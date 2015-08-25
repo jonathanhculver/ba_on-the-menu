@@ -11,20 +11,25 @@
 		<script type="text/javascript" src="/js/models/recipe.js"></script>
 		<script type="text/javascript" src="/js/collections/recipes.js"></script>
 		<script type="text/javascript" src="/js/views/recipe.js"></script>
-		<script type="text/javascript" src="/js/views/menu-layout.js"></script>
+		<script type="text/javascript" src="/js/views/menu.js"></script>
 		<link rel="shortcut icon" href="https://www.blueapron.com/favicon.ico" />
 		<title>On The Menu</title>
 	</head>
 
 
 	<body>
-		<script type="text/x-handlebars-template" id="layout">
+		<script type="text/x-handlebars-template" id="menu">
 			<div class="header"></div>
 			<div class="container"></div>
-			<div> {{ blah }}</div>
 		</script>
 
-		<script type="text/x-handlebars-template" id="recipe" src="/js/templates/recipe.js"></script>
+		<script type="text/x-handlebars-template" id="recipe">
+			<img class="recipeImg" src="{{ img }}"/>
+			<div class="card">
+				<div class="title">{{ title }}</div>
+				<div class="description">{{ description }}</div>
+			</div>
+		</script>
 
 	</body>
 
