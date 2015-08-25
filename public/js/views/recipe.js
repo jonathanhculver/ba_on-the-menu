@@ -7,15 +7,15 @@ var app = app || {};
 		template: function(context) {
 			var source = $('#recipe').html(),
 				template = Handlebars.compile(source);
-			console.log(this.model);
+			console.log(this.model.attributes);
 			return template(context);
 		},
 		// initialize: function() {
 		// 	this.listenTo(this.model, "add", this.render);
 		// },
-	 	constructor: function(){
-	    	Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
-	    	this.listenTo(this.model, "change", this.render);
-	  	},
+	 	// constructor: function(){
+	  //   	Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
+	  //   	this.listenTo(this.model, "change", this.render);
+	  // 	},
 	});
 })();

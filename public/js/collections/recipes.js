@@ -7,11 +7,10 @@ var app = app || {};
 		parse: function(response) {
 			var result = [];
 
-			response.forEach(function(value, index){
-				result[index] = {};
-				result[index].plan = 'Two Person Plan';
-				result[index].date = value.two_person_plan.delivery.date;
-				result[index].recipes = value.two_person_plan.recipes;
+			response.forEach(function(value){
+				value.two_person_plan.recipes.forEach(function(recipe){
+					result.push(recipe.recipe);
+				});
 			});
 
 			return result;

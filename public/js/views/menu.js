@@ -17,7 +17,7 @@ var app = app || {};
 			};
 		},
 
-		initialize: function() {
+		initialize: function() { //should this be replaced with constructer?
 			// create collection of recipes, pulled from the api
 			this.collection = new app.RecipeCollection();
 			// re render the view when models are added to the collection
@@ -30,7 +30,7 @@ var app = app || {};
 
 			this.listenTo(this.collection, "add", function(model){
 				this.appendView(".container", new app.RecipeView({
-
+					model: model
 				}));
 				this.refreshViews();
 			});
