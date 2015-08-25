@@ -17,23 +17,34 @@ var app = app || {};
 			};
 		},
 
-		initialize: function() { //should this be replaced with constructer?
-			// create collection of recipes, pulled from the api
-			this.collection = new app.RecipeCollection();
-			// re render the view when models are added to the collection
-			this.listenTo(this.collection, "add", this.render);
-			this.collection.fetch();
-		},
-
 		constructor: function() {
 			Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
 
-			this.listenTo(this.collection, "add", function(model){
-				this.appendView(".container", new app.RecipeView({
-					model: model
-				}));
-				this.refreshViews();
+			// create collection of recipes, pulled from the api
+			this.collection = new app.RecipeCollection();
+			this.collection.fetch();
+
+			//reset collection to the default recipes on load
+			this.listenTo(this.collection, "add", function(){
+				this.filterCouplePlan();
+				this.render();
 			});
+			//render the recipe views
+			this.listenTo(this.collection, "reset", function(model){
+				for(var i=0; i<model.models.length; i++){
+					this.appendView(".container", new app.RecipeView({
+						model: model.models[i]
+					}));
+				}
+			});
+		},
+
+		filterFamilyPlan: function() {
+			this.collection.reset(this.collection.familyPlan());
+		},
+
+		filterCouplePlan: function(cb) {
+			this.collection.reset(this.collection.couplePlan());
 		}
 	});
 })();
