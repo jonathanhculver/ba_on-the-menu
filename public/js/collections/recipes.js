@@ -17,7 +17,7 @@ var app = app || {};
 				});
 			});
 
-			return result;
+			return new app.RecipeCollection(result);
 		},
 
 		couplePlan: function() {
@@ -29,7 +29,7 @@ var app = app || {};
 				});
 			});
 
-			return result;
+			return new app.RecipeCollection(result);
 		},
 
 		getWeeks: function() {
@@ -37,10 +37,10 @@ var app = app || {};
 
 			this.models.forEach(function(value){
 				var date = value.get('family_plan').delivery.date;
-				result.push(date);
+				result.push({'date': date});
 			});
 
-			return result;
+			return new app.RecipeCollection(result);
 		}
 	});
 })();

@@ -11,12 +11,6 @@ var app = app || {};
 			return template(context);
 		},
 
-		context: function() {
-			return {
-				count: this.collection.length
-			};
-		},
-
 		constructor: function() {
 			Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
 
@@ -25,31 +19,24 @@ var app = app || {};
 			this.collection.fetch();
 
 			//reset collection to the default recipes on load
-			this.listenTo(this.collection, "add", function(){
-				this.filterCouplePlan();
+			this.listenTo(this.collection, "add", function(model){
+				this.appendView(".menuContainer", new app.RecipeContainerView({
+					collection: model.getRecipes('two_person_plan'),
+					model: model
+				}));
 				this.render();
 			});
 			//render the recipe views
-			this.listenTo(this.collection, "reset", function(collection){
-				for(var i = 0; i< 2; i++) {
-					this.appendView(".menuContainer", new app.RecipeRowView({
-						collection: collection,
-						index: i
-					}));
-				}
-			});
+			// this.listenTo(this.collection, "reset", function(collection){
+			// 	for(var i = 0; i< 2; i++) {
+			// 		this.appendView(".menuContainer", new app.RecipeRowView({
+			// 			collection: collection,
+			// 			index: i
+			// 		}));
+			// 	}
+			// });
 
-			this.setView(".header", new app.HeaderView({
-
-			}));
-		},
-
-		filterFamilyPlan: function() {
-			this.collection.reset(this.collection.familyPlan());
-		},
-
-		filterCouplePlan: function(cb) {
-			this.collection.reset(this.collection.couplePlan());
+			this.setView(".header", new app.HeaderView());
 		}
 	});
 })();
