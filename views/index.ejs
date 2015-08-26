@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="/js/views/recipe.js"></script>
 		<script type="text/javascript" src="/js/views/row.js"></script>
 		<script type="text/javascript" src="/js/views/menu.js"></script>
+		<script type="text/javascript" src="/js/views/header.js"></script>
 		<script type="text/javascript" src="/js/routers/router.js"></script>
 		<link rel="shortcut icon" href="https://www.blueapron.com/favicon.ico" />
 		<title>On The Menu</title>
@@ -22,9 +23,30 @@
 
 
 	<body>
+		<script type="text/x-handlebars-template" id="header">
+			<div class="container">
+				<div class="logo pull-left">
+					<a href="http://blueapron.com">
+						<img src="http://media.blueapron.com/assets/logo/blue-apron-logo@2x-e88a5d59616ee9d85447839a90b8f9b0.png">
+					</a>
+				</div>
+				<div id="nav">
+					<ul>
+						<li class="border_b">On The Menu</li>
+						<li>
+							<a href="https://www.blueapron.com/pages/pricing">Pricing</a>
+						</li>
+						<li>
+							<a href="https://www.blueapron.com/market">Market</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</script>
+
 		<script type="text/x-handlebars-template" id="menu">
 			<div class="header"></div>
-			<div class="container"></div>
+			<div class="container menuContainer"></div>
 		</script>
 
 		<script type="text/x-handlebars-template" id="recipe">

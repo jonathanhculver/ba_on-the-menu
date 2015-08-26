@@ -31,18 +31,17 @@ var app = app || {};
 			});
 			//render the recipe views
 			this.listenTo(this.collection, "reset", function(collection){
-				/*for(var i=0; i<collection.models.length; i++){
-					this.appendView(".container", new app.RecipeView({
-						model: collection.models[i]
-					}));
-				}*/
 				for(var i = 0; i< 2; i++) {
-					this.appendView(".container", new app.RecipeRowView({
+					this.appendView(".menuContainer", new app.RecipeRowView({
 						collection: collection,
 						index: i
 					}));
 				}
 			});
+
+			this.setView(".header", new app.HeaderView({
+
+			}));
 		},
 
 		filterFamilyPlan: function() {
