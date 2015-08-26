@@ -1,0 +1,117 @@
+
+@import url(http://fonts.googleapis.com/css?family=Signika:700,300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+
+.menu {
+	font-family: "Signika", sans-serif;
+	font-weight: 300;
+	margin: 0;
+	color: #2F3566;
+}
+
+.emphasis {
+	font-weight: 600;
+}
+
+#loading {
+  	background-color: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+}
+
+.loadContainer {
+	margin: 0 auto;
+	width: 200px;
+	margin-top: 80px;
+}
+
+.loadContainer img {
+	width: 100%;
+}
+
+.button {
+	background-image: linear-gradient(#777a99, #424673, #2f3567);
+	border-color: #484769 #484769 #282a52;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	padding: 3px 10px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.button:hover {
+	background-image: none;
+	background-color: #313567;
+}
+
+/*** end global styles ***/
+
+/** recipes ***/
+
+@media (max-width: 990px) {
+	.recipeLink {
+	    float: none;
+	    display: block;
+	    max-width: 370px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    position: relative;
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	.description {
+		text-align: center;
+	}
+}
+
+.container {
+	margin-top: 20px;
+}
+
+.container .recipe {
+	margin-bottom: 15px;
+	position: relative;
+	cursor: pointer;
+}
+
+.veggieLeaf {
+	position: absolute;
+	right: 25px;
+	top: 10px;
+}
+
+.recipe .recipeImg {
+	width: 100%;
+	border: 1px solid #B7B7B7;;
+}
+
+.recipe .recipeImg:hover {
+	outline: 3px solid #303766;
+	border-color: #303766;
+}
+
+.recipe .title {
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 1.2em;
+	margin-top: 5px;
+}
+
+.recipe .description {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 5px;
+	font-style: italic;
+	font-family: "Arvo";
+}
+
+/** end recipes **/

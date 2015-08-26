@@ -30,10 +30,10 @@ var app = app || {};
 				this.render();
 			});
 			//render the recipe views
-			this.listenTo(this.collection, "reset", function(model){
-				for(var i=0; i<model.models.length; i++){
+			this.listenTo(this.collection, "reset", function(collection){
+				for(var i=0; i<collection.models.length; i++){
 					this.appendView(".container", new app.RecipeView({
-						model: model.models[i]
+						model: collection.models[i]
 					}));
 				}
 			});

@@ -2,7 +2,7 @@ var app = app || {};
 
 (function(){
 	app.RecipeView = Backbone.Viewmaster.extend({
-		className: 'recipe',
+		className: 'recipe col-md-4',
 
 		template: function(context) {
 			var source = $('#recipe').html(),

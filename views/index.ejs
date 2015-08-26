@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="/css/style.css" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.2/backbone-min.js"></script>
 		<script type="text/javascript" src="/lib/handlebars-v3.0.3.js"></script>
@@ -25,7 +27,14 @@
 		</script>
 
 		<script type="text/x-handlebars-template" id="recipe">
-			<img class="recipeImg" src="{{ c_main_dish_image.high_feature }}"/>
+			<a class="recipeLink" href="http://blueapron.com/recipes/{{ slug }}">
+				<img class="recipeImg" src="{{ c_main_dish_image.high_feature }}"/>
+				{{#if vegetarian}}
+				<div class="veggieLeaf">
+					<img src="http://res.cloudinary.com/hn5egfnw4/image/upload/v1437958774/veggie_tadrr8.png" />
+				</div>
+				{{/if}}
+			</a>
 			<div class="card">
 				<div class="title">{{ main_title }}</div>
 				<div class="description">{{ sub_title }}</div>
