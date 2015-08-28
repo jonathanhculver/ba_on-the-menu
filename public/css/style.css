@@ -32,6 +32,16 @@
 	width: 100%;
 }
 
+.menu h2 {
+	font-size: 30px;
+	font-weight: 600;
+	margin-top: 0;
+}
+
+.align_c {
+	text-align: center;
+}
+
 .button {
 	background-image: linear-gradient(#777a99, #424673, #2f3567);
 	border-color: #484769 #484769 #282a52;
@@ -82,11 +92,16 @@
 		margin: 0 auto;
 	}
 
+	.week_nav {
+		display: none;
+	}
+
 
 }
 
 
 /*** end responsive ***/
+
 
 /** header ***/
 
@@ -148,6 +163,43 @@
 }
 
 /** end header ***/
+
+/** filters **/
+.filtersNav {
+	max-width: 970px;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.week_nav {
+	background: url('http://media.blueapron.com/assets/sprites/icons-2x-sb4c476ab57-29331cca948240f2604d31311840346e.png') no-repeat;
+	height: 32px;
+	width: 32px;
+	background-size: 186px, auto;
+	cursor: pointer;
+	position: absolute;
+}
+
+.week_nav_left {
+	background-position: 0 -627px;
+	left: 0px;
+	top: 0px;
+}
+
+.week_nav_right {
+	background-position: 0 -659px; 
+	right: 0px;
+	top: 0px;
+}
+
+.week_nav.disabled {
+	opacity: .2;
+	cursor: default;
+}
+
+
+/** end filters ***/
 
 /** recipes ***/
 

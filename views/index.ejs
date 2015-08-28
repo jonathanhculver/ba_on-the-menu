@@ -17,6 +17,7 @@
 		<script type="text/javascript" src="/js/views/row.js"></script>
 		<script type="text/javascript" src="/js/views/menu.js"></script>
 		<script type="text/javascript" src="/js/views/header.js"></script>
+		<script type="text/javascript" src="/js/views/filters.js"></script>
 		<script type="text/javascript" src="/js/routers/router.js"></script>
 		<link rel="shortcut icon" href="https://www.blueapron.com/favicon.ico" />
 		<title>On The Menu</title>
@@ -47,7 +48,16 @@
 
 		<script type="text/x-handlebars-template" id="menu">
 			<div class="header"></div>
-			<div class="container menuContainer"></div>
+			<div class="container menuContainer">
+				<div class="filters">
+					<div class="filtersNav">
+						<h2 class="align_c">What we're cooking the week of <span id="planDate"></span></h2>
+						<div class="week_nav week_nav_left disabled"></div>
+						<div class="week_nav week_nav_right"></div>
+					</div>
+
+				</div>
+			</div>
 		</script>
 
 		<script type="text/x-handlebars-template" id="recipe">
@@ -71,6 +81,18 @@
 
 		<script type="text/x-handlebars-template" id="row">
 			<div class="row"></div>
+		</script>
+
+		<script type="text/x-handlebars-template" id="filters">
+
+		</script>
+
+		<script type="text/x-handlebars-template" id="loading">
+		<div class="loading">
+			<div class="loadContainer">
+				<img src="http://media.blueapron.com/assets/loader/pot-loader-a096014ae159099e67d206a5aa4a49f3.gif" />
+			</div>
+		</div>
 		</script>
 
 	</body>

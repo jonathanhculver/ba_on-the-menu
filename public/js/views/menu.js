@@ -11,21 +11,31 @@ var app = app || {};
 			return template(context);
 		},
 
+		events: {
+			'click .week_nav_right'	: 	'nextWeek',
+			'click .week_nav_left' 	: 	'previousWeek',
+		},
+
 		constructor: function() {
 			Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
 			var self = this;
 
+			this.week = 0;
+			this.plan = 'two_person_plan';
+
+			// this.showLoading();
 			// create collection of recipes, pulled from the api
 			this.collection = new app.RecipeCollection();
 			this.collection.fetch({
-				success: function(){
-					self.renderRecipes('two_person_plan', 0);
+				success: function(response){
+					self.renderRecipes(self.plan, self.week);
 				}
 			});
 
-			//reset collection to the default recipes on load
 			this.listenTo(this.collection, "add", function(model, collection, options){
-				//append dropdown view
+				this.setView(".filters", new app.FiltersView({
+
+				}));
 				this.render();
 			});
 
@@ -38,6 +48,39 @@ var app = app || {};
 				model: this.collection.models[index]
 			}));	
 			this.render();
+			//this.refreshViews();
+		},
+
+		nextWeek: function() {
+			if(this.week < this.collection.length-1) {
+				this.renderRecipes(this.plan, ++this.week);
+				if(this.week > 0) {
+					$('.week_nav_left').removeClass('disabled');
+				}
+				if(this.week === this.collection.length-1) {
+					$('.week_nav_right').addClass('disabled');
+				}
+			}	
+		},
+
+		previousWeek: function() {
+			if(this.week > 0) {
+				this.renderRecipes(this.plan, --this.week);
+				if(this.week === 0) {
+					$('.week_nav_left').addClass('disabled');
+				} else {
+					$('.week_nav_left').removeClass('disabled');
+				}
+			}
 		}
+
+		// showLoading: function() {
+		// 	var loading = $('#loading').html();
+		// 	this.$el.html('blah');
+		// },
+
+		// removeLoading: function() {
+		// 	this.$el.removeClass('loading');
+		// }
 	});
 })();
