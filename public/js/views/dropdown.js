@@ -1,24 +1,27 @@
 var app = app || {};
 
 (function(){
-	app.FiltersView = Backbone.Viewmaster.extend({
+	app.DropdownView = Backbone.Viewmaster.extend({
 
 		initialize: function(options) {
 			this.options = options;
 		},
 
 		template: function(context) {
-			var source = $('#filters').html(),
+			var source = $('#dropdown').html(),
 				template = Handlebars.compile(source);
 			return template(context);
 		},
 
 		constructor: function() {
 			Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
+			var self = this;
 
-			this.setView('.dropdown', new app.DropdownView({
-				collection: this.collection
-			}));
+			this.collection.models.forEach(function(value){
+				self.appendView('.dropdown_container', new app.DropdownRowView({
+					model: value
+				}));
+			});
 		}
 	});
 })();

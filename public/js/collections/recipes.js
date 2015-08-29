@@ -5,15 +5,16 @@ var app = app || {};
 		model: app.Recipe,
 		url: '/api/menu',
 
-		getWeeks: function() {
-			var result = [];
+		getWeeks: function(i) {
 
-			this.models.forEach(function(value){
-				var date = value.get('family_plan').delivery.date;
-				result.push({'date': date});
+			var result = this.models.map(function(value, index){
+				var date = value.get('family_plan').delivery.date,
+					dateObj = new Date(date),
+					monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+				return {'date': date, 'dateFormatted': monthNames[dateObj.getMonth()]+' '+app.helper.ordinalSuffix(dateObj.getDate()), 'index': index, selected: i === index ? true : false}
 			});
 
-			return new app.RecipeCollection(result);
+			return new app.DateCollection(result);
 		}
 	});
 })();

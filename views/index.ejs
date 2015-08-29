@@ -11,14 +11,19 @@
 		<script type="text/javascript" src="/lib/backbone.viewmaster.min.js"></script>
 		<script type="text/javascript" src="/js/app.js"></script>
 		<script type="text/javascript" src="/js/models/recipe.js"></script>
+		<script type="text/javascript" src="/js/models/date.js"></script>
 		<script type="text/javascript" src="/js/collections/recipes.js"></script>
+		<script type="text/javascript" src="/js/collections/dates.js"></script>
 		<script type="text/javascript" src="/js/views/recipe.js"></script>
+		<script type="text/javascript" src="/js/views/dropdown.js"></script>
+		<script type="text/javascript" src="/js/views/dropdown_row.js"></script>
 		<script type="text/javascript" src="/js/views/recipe_container.js"></script>
 		<script type="text/javascript" src="/js/views/row.js"></script>
 		<script type="text/javascript" src="/js/views/menu.js"></script>
 		<script type="text/javascript" src="/js/views/header.js"></script>
 		<script type="text/javascript" src="/js/views/filters.js"></script>
 		<script type="text/javascript" src="/js/routers/router.js"></script>
+		<script type="text/javascript" src="/js/helper.js"></script>
 		<link rel="shortcut icon" href="https://www.blueapron.com/favicon.ico" />
 		<title>On The Menu</title>
 	</head>
@@ -49,15 +54,33 @@
 		<script type="text/x-handlebars-template" id="menu">
 			<div class="header"></div>
 			<div class="container menuContainer">
-				<div class="filters">
-					<div class="filtersNav">
-						<h2 class="align_c">What we're cooking the week of <span id="planDate"></span></h2>
-						<div class="week_nav week_nav_left disabled"></div>
-						<div class="week_nav week_nav_right"></div>
-					</div>
-
-				</div>
+				<div class="filters"></div>
 			</div>
+		</script>
+
+		<script type="text/x-handlebars-template" id="filters">
+			<div class="filtersNav">
+				<h2 class="align_c">What we're cooking the week of 
+					<span id="planDate">{{ dateFormatted }}</span>
+					<span class="arrow_down"></span>
+				</h2>
+				<div class="week_nav week_nav_left disabled"></div>
+				<div class="week_nav week_nav_right"></div>
+				<div class="dropdown"></div>
+			</div>
+		</script>
+
+		<script type="text/x-handlebars-template" id="dropdown">
+			<ul><div class="dropdown_container"></div></ul>
+		</script>
+
+		<script type="text/x-handlebars-template" id="dropdownrow">
+			<li>
+				{{#if selected}}
+				<div class="dropdown_check"></div>
+				{{/if}}
+				<div class="dropdown_row" data-rowindex="{{index }}">{{ dateFormatted }}</div>
+			</li>
 		</script>
 
 		<script type="text/x-handlebars-template" id="recipe">

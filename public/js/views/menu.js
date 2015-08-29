@@ -32,13 +32,6 @@ var app = app || {};
 				}
 			});
 
-			this.listenTo(this.collection, "add", function(model, collection, options){
-				this.setView(".filters", new app.FiltersView({
-
-				}));
-				this.render();
-			});
-
 			this.setView(".header", new app.HeaderView());
 		},
 
@@ -47,8 +40,17 @@ var app = app || {};
 				collection: this.collection.models[index].getRecipes(plan),
 				model: this.collection.models[index]
 			}));	
+			this.renderFilters(index);
 			this.render();
-			//this.refreshViews();
+		},
+
+		renderFilters: function(index) {
+			var weeks = this.collection.getWeeks(this.week);
+			this.setView(".filters", new app.FiltersView({
+				collection: weeks,
+				model: weeks.models[index]
+			}));	
+			this.render();
 		},
 
 		nextWeek: function() {
