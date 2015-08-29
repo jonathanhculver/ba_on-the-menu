@@ -14,7 +14,8 @@ var app = app || {};
 		events: {
 			'click .week_nav_right'			: 	'nextWeek',
 			'click .week_nav_left' 			: 	'previousWeek',
-			'click .planDateContainer'		: 	'showDropdown'
+			'click .planDateContainer'		: 	'showDropdown',
+			'click .dropdown_row'			: 	'selectWeek'
 		},
 
 		constructor: function() {
@@ -57,29 +58,25 @@ var app = app || {};
 		nextWeek: function() {
 			if(this.week < this.collection.length-1) {
 				this.renderRecipes(this.plan, ++this.week);
-				if(this.week > 0) {
-					$('.week_nav_left').removeClass('disabled');
-				}
-				if(this.week === this.collection.length-1) {
-					$('.week_nav_right').addClass('disabled');
-				}
 			}	
 		},
 
 		previousWeek: function() {
 			if(this.week > 0) {
 				this.renderRecipes(this.plan, --this.week);
-				if(this.week === 0) {
-					$('.week_nav_left').addClass('disabled');
-				} else {
-					$('.week_nav_left').removeClass('disabled');
-				}
 			}
 		},
 
 		showDropdown: function(e) {
 			var dropdown = $('.dropdown ul');
 			dropdown.slideToggle();
+		},
+
+		selectWeek: function(e) {
+			var row = e.currentTarget,
+				index = row.attributes['data-rowindex'].value;
+			this.week = index;
+			this.renderRecipes(this.plan, index);
 		}
 
 		// showLoading: function() {
