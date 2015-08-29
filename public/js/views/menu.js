@@ -12,8 +12,9 @@ var app = app || {};
 		},
 
 		events: {
-			'click .week_nav_right'	: 	'nextWeek',
-			'click .week_nav_left' 	: 	'previousWeek',
+			'click .week_nav_right'			: 	'nextWeek',
+			'click .week_nav_left' 			: 	'previousWeek',
+			'click .planDateContainer'		: 	'showDropdown'
 		},
 
 		constructor: function() {
@@ -45,7 +46,7 @@ var app = app || {};
 		},
 
 		renderFilters: function(index) {
-			var weeks = this.collection.getWeeks(this.week);
+			var weeks = this.collection.getWeeks(index);
 			this.setView(".filters", new app.FiltersView({
 				collection: weeks,
 				model: weeks.models[index]
@@ -74,6 +75,11 @@ var app = app || {};
 					$('.week_nav_left').removeClass('disabled');
 				}
 			}
+		},
+
+		showDropdown: function(e) {
+			var dropdown = $('.dropdown ul');
+			dropdown.slideToggle();
 		}
 
 		// showLoading: function() {
