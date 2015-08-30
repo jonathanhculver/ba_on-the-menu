@@ -21,6 +21,7 @@
 		<script type="text/javascript" src="/js/views/row.js"></script>
 		<script type="text/javascript" src="/js/views/menu.js"></script>
 		<script type="text/javascript" src="/js/views/header.js"></script>
+		<script type="text/javascript" src="/js/views/footer.js"></script>
 		<script type="text/javascript" src="/js/views/filters.js"></script>
 		<script type="text/javascript" src="/js/routers/router.js"></script>
 		<script type="text/javascript" src="/js/helper.js"></script>
@@ -71,6 +72,7 @@
 			<div class="container menuContainer">
 				<div class="filters"></div>
 			</div>
+			<div class="footer"></div>
 		</script>
 
 		<script type="text/x-handlebars-template" id="filters">
@@ -128,6 +130,70 @@
 				{{#if familyPlan}}
 				<div class="col-md-2"></div>
 				{{/if}}
+			</div>
+		</script>
+
+		<script type="text/x-handlebars-template" id="footer">
+			<div class="container cookbook_link">
+				<div class="link"> Want to see all our recipes? Check out our <a href="http://blueapron.com/cookbook">Cookbook</a>.</div>
+			</div>
+			<div class="footer_container">
+				<div class="container">
+					<div class="row">
+						<div class="press">
+							<a class="wall_street" href="http://blueapron.com/pages/press#wall-street-journal"></a>
+							<a class="tc" href="http://blueapron.com/pages/press#techcrunch"></a>
+							<a class="good_morning" href="http://blueapron.com/pages/press#good-morning-america"></a>
+							<a class="nyt" href="http://blueapron.com/pages/press#new-york-times"></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="connected">	
+							<div class="col-md-3">
+								Follow Us
+								<div class="social_icons">
+									<a href="http://www.facebook.com/blueapron">
+										<span class="social_icon fb"></span>
+									</a>
+									<a href="http://www.facebook.com/blueapron">
+										<span class="social_icon twitter"></span>
+									</a>
+									<a href="http://www.facebook.com/blueapron">
+										<span class="social_icon insta"></span>
+									</a>
+									<a href="http://www.facebook.com/blueapron">
+										<span class="social_icon pin margin_r_0"></span>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="email_signup">
+									<div class="title">Get free recipes</div>
+									<div class="email_form">
+										<input type="text" placeholder="EMAIL ADDRESS" />
+										<a href="http://blueapron.com/users/sign_up">
+											<div class="btn">Go</div>
+										</a>
+									</div>
+									<div class="email_text">
+										<p>A new menu in your inbox every week</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+							<div class="blog_title">From the Blog</div>
+							<div class="blog_img">
+								<img src="http://dz6lfdxqpu2f9.cloudfront.net/wp-content/uploads/2015/07/Belfiore-header-75x75.jpg" alt="Belfiore-header-75x75">
+							</div>
+							<div class="blog_text">
+								<a href="http://blog.blueapron.com/how-delicious-italian-cheese-is-crafted/?utm_source=rss&utm_medium=rss&utm_campaign=how-delicious-italian-cheese-is-crafted">
+									How Delicious Italian Cheese is Crafted
+								</a>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</script>
 

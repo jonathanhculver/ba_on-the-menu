@@ -64,6 +64,9 @@
 .floatRight {
 	float:right;
 }
+.margin_r_0 {
+	margin-right: 0px !important;
+}
 
 /*** end global styles ***/
 
@@ -105,6 +108,19 @@
 		width: 100px !important;
 	}
 
+	.press {
+		width: 300px !important;
+		text-align: center;
+	}
+
+	.press a {
+		float: none !important;
+		margin-bottom: 25px;
+		opacity: 1 !important;
+		margin-right: auto !important;
+		margin-left: auto;
+	}
+
 
 }
 
@@ -115,7 +131,7 @@
 /** header ***/
 
 .header {
-	border-bottom: 1px solid #53587f;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13), 0 1px 0 rgba(0, 0, 0, 0.19);
 	font-size: 28px;
   	padding-bottom: 5px;
   	width: 100%;
@@ -412,3 +428,240 @@
 }
 
 /** end recipes **/
+
+
+/** footer **/
+
+.cookbook_link .link {
+	text-align: center;
+	font-family: "Arvo";
+	font-size: 16px;
+	font-style: italic;
+	font-weight: 400;
+	color: #666;
+}
+
+.cookbook_link a {
+	color: #2f3566;
+}
+
+.cookbook_link a:hover {
+	color: #2f3566;
+}
+
+.footer_container {
+	background-color: #313567;
+	color: #ccc;
+	font-family: "Helvetica Neue";
+	height: 300px;
+	margin-top: 30px;
+}
+
+.press {
+	margin: 0 auto;
+	width: 800px;
+	margin-top: 45px;
+}
+
+.press a {
+	display: block;
+	float: left;
+	margin-right: 35px;
+	opacity: .3;
+}
+
+.press a:hover {
+	opacity: 1;
+}
+
+
+.press .wall_street {
+	background: url("http://media.blueapron.com/assets/sprites/footer-logos-2x-sfcae5c0d3c-b133e792e704c016dd0123bf45602d1b.png") no-repeat;
+	background-position: 0 -30px;
+	background-size: 236px auto, auto auto;
+    height: 20px;
+    width: 235px;
+}
+
+.press .tc {
+	background: url("http://media.blueapron.com/assets/sprites/footer-logos-2x-sfcae5c0d3c-b133e792e704c016dd0123bf45602d1b.png") no-repeat;
+	background-position: 0 -80px;
+	background-size: 236px auto, auto auto;
+  	height: 20px;
+    width: 157px;
+}
+
+.press .good_morning {
+	background: url("http://media.blueapron.com/assets/sprites/footer-logos-2x-sfcae5c0d3c-b133e792e704c016dd0123bf45602d1b.png") no-repeat;
+	background-position: 0 -50px;
+	background-size: 236px auto, auto auto;
+  	height: 30px;
+    width: 57px;
+}
+
+.press .nyt {
+	background: url("http://media.blueapron.com/assets/sprites/footer-logos-2x-sfcae5c0d3c-b133e792e704c016dd0123bf45602d1b.png") no-repeat;
+	background-position: 0 0;
+	background-size: 236px auto, auto auto;
+  	height: 30px;
+    width: 204px;
+}
+
+.connected {
+	margin-top: 35px;
+	padding-top: 30px;
+	border-top: 1px solid #595d80;
+	font-style: italic;
+	text-align: center;
+	font-size: 18px;
+	font-family: "Arvo";
+	font-weight: 500;
+}
+
+.email_signup {
+ 	border-left: 1px solid #595d80;
+    border-right: 1px solid #595d80;
+    font-family: "Signika",sans-serif;
+    margin: 0 30px;
+    text-align: center;
+    height: 125px;
+}
+
+.social_icons {
+	margin: 0 auto;
+	width: 235px;
+	margin-top: 20px;
+}
+
+.social_icon {
+	margin-right: 25px;
+	display: inline-block;
+    height: 24px;
+    width: 30px;
+}
+
+.social_icon.fb {
+  	background: url("//media.blueapron.com/assets/sprites/icons-2x-sb4c476ab57-29331cca948240f2604d31311840346e.png") no-repeat;
+    background-position: 0 -829px;
+    background-size: 186px auto, auto auto;
+}
+
+.social_icon.twitter {
+ 	background-image: url("//media.blueapron.com/assets/sprites/icons-2x-sb4c476ab57-29331cca948240f2604d31311840346e.png");
+    background-position: 0 -741px;
+    background-size: 186px auto, auto auto;
+}
+
+.social_icon.insta {
+    background-image: url("//media.blueapron.com/assets/sprites/icons-2x-sb4c476ab57-29331cca948240f2604d31311840346e.png");
+    background-position: 0 -795px;
+    background-size: 186px auto, auto auto;
+}
+
+.social_icon.pin {
+ 	background-image: url("//media.blueapron.com/assets/sprites/icons-2x-sb4c476ab57-29331cca948240f2604d31311840346e.png");
+    background-position: 0 -691px;
+    background-size: 186px auto, auto auto;
+}
+
+.blog_title {
+	margin-bottom: 20px;
+}
+
+.blog_text {
+	font-size: 14px;
+	font-weight: 400;
+	font-style: normal;
+	font-family: "Helvetica Neue";
+	float: left;
+	width: 150px;
+	text-align: left;
+	margin-left: 10px;
+	line-height: 1.2;
+}
+
+.blog_text a {
+	color: #ccc;
+}
+
+.blog_text a:hover {
+	color: #ccc;
+}
+
+.blog_img {
+	float: left;
+}
+
+.email_form {
+	margin: 0 auto;
+	margin-top: 15px;
+	width: 350px;
+}
+
+.email_form input {
+	background-color: #fafafc;
+	border: 0 none transparent;
+	border-radius: 4px 0 0 4px;
+	box-sizing: content-box;
+	float: left;
+	font-family: "Helvetica Neue";
+	height: 20px;
+	line-height: 20px;
+	margin-top: 0;
+	padding: 10px 15px;
+	width: 245px;	
+	font-style: normal;
+	font-weight: 400;
+	color: #333;
+	font-size: 14px;
+}
+
+.email_form .btn {
+	background-color: #a0a2b4;
+	background-image: none;
+	border: 0 none transparent;
+	border-radius: 0 4px 4px 0;
+	box-shadow: 0 0 0 transparent;
+	float: left;
+	font-family: "Helvetica Neue";
+	font-size: 15px;
+	font-weight: 700;
+	height: 40px;
+	line-height: 20px;
+	margin-top: 0;
+	padding: 10px 15px;
+	width: 55px;
+	color: #FFF;
+}
+
+.email_form .btn:hover {
+	color: #FFF;
+	background-color: #cacbd4;
+} 
+
+.email_text {
+	width: 100%;
+	clear:both;
+}
+
+.email_signup p {
+	position: relative;
+	top: 15px;
+	font-size: 14px;
+	font-style: normal;
+
+}
+
+.email_signup .title {
+	font-family: "Arvo";
+}
+
+
+
+
+
+
+
+
+
+/*** end footer ***/

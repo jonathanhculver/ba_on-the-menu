@@ -24,6 +24,7 @@ var app = app || {};
 			//for functional scoping 
 			var self = this;
 
+			//defaults on load
 			this.week = 0;
 			this.plan = 'two_person_plan';
 
@@ -31,21 +32,26 @@ var app = app || {};
 			this.collection = new app.RecipeCollection();
 			this.collection.fetch({
 				success: function(response){
-					self.renderRecipes(self.plan, self.week);
+					self.renderViews(self.plan, self.week);
 				}
 			});
 
 			this.setView(".header", new app.HeaderView());
 		},
 
+		renderViews: function(plan, index) {
+			this.renderRecipes(plan, index);
+			this.renderFilters(index);
+			this.renderFooter();
+			this.render();
+			this.hideLoading();
+		},
+
 		renderRecipes: function(plan, index) {
 			this.setView(".menuContainer", new app.RecipeContainerView({
 				collection: this.collection.models[index].getRecipes(plan),
 				model: this.collection.models[index]
-			}));	
-			this.renderFilters(index);
-			this.render();
-			this.hideLoading();
+			}));
 		},
 
 		renderFilters: function(index) {
@@ -56,15 +62,19 @@ var app = app || {};
 			}));	
 		},
 
+		renderFooter: function() {
+			this.setView(".footer", new app.FooterView());
+		},
+
 		nextWeek: function() {
 			if(this.week < this.collection.length-1) {
-				this.renderRecipes(this.plan, ++this.week);
+				this.renderViews(this.plan, ++this.week);
 			}	
 		},
 
 		previousWeek: function() {
 			if(this.week > 0) {
-				this.renderRecipes(this.plan, --this.week);
+				this.renderViews(this.plan, --this.week);
 			}
 		},
 
@@ -78,7 +88,7 @@ var app = app || {};
 				index = row.attributes['data-rowindex'].value;
 			//update current week selected
 			this.week = index;
-			this.renderRecipes(this.plan, index);
+			this.renderViews(this.plan, index);
 		},
 
 		selectPlan: function(e) {
@@ -95,7 +105,7 @@ var app = app || {};
 
 			//update current plan selected
 			this.plan = plan;
-			this.renderRecipes(this.plan, this.week);
+			this.renderViews(this.plan, this.week);
 		},
 
 		hideLoading: function() {
