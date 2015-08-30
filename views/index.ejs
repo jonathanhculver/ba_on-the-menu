@@ -70,8 +70,8 @@
 				<div class="week_nav week_nav_right {{#if lastWeek}} disabled {{/if}}"></div>
 				<div class="dropdown"></div>
 				<div class="plan_buttons">
-					<div class="btn couple_btn" data-type="two_person_plan">2-Person Plan</div>
-					<div class="btn family_btn btn_grey" data-type="family_plan">Family Plan</div>
+					<div class="btn couple_btn plan_btn {{#if familyPlan}} btn_grey {{/if}}" data-type="two_person_plan">2-Person Plan</div>
+					<div class="btn family_btn {{#if couplePlan}} btn_grey {{/if}} plan_btn" data-type="family_plan">Family Plan</div>
 				</div>
 			</div>
 		</script>
@@ -109,7 +109,11 @@
 		</script>
 
 		<script type="text/x-handlebars-template" id="row">
-			<div class="row"></div>
+			<div class="row">
+				{{#if familyPlan}}
+				<div class="col-md-2"></div>
+				{{/if}}
+			</div>
 		</script>
 
 		<script type="text/x-handlebars-template" id="filters">

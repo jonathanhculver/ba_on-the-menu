@@ -5,7 +5,7 @@ var app = app || {};
 		model: app.Recipe,
 		url: '/api/menu',
 
-		getWeeks: function(i) {
+		getWeeks: function(i, plan) {
 
 			var self = this;
 
@@ -13,7 +13,15 @@ var app = app || {};
 				var date = value.get('family_plan').delivery.date,
 					dateObj = new Date(date),
 					monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-				return {'date': date, 'dateFormatted': monthNames[dateObj.getMonth()]+' '+app.helper.ordinalSuffix(dateObj.getDate()+1), 'index': index, selected: i == index ? true : false, firstWeek: index === 0 ? true : false, lastWeek: index === self.models.length-1  ? true : false}
+				return {'date': date, 
+						'dateFormatted': monthNames[dateObj.getMonth()]+' '+app.helper.ordinalSuffix(dateObj.getDate()+1), 
+						'index': index, 
+						'selected': i == index ? true : false, 
+						'firstWeek': index === 0 ? true : false, 
+						'lastWeek': index === self.models.length-1  ? true : false,
+						'familyPlan': plan === 'family_plan' ? true : false,
+						'couplePlan': plan === 'two_person_plan' ? true : false
+					}
 			});
 
 			return new app.DateCollection(result);

@@ -6,7 +6,10 @@ var app = app || {};
 		getRecipes: function(plan) {
 			var recipes = this.attributes[plan].recipes;
 			recipes = recipes.map(function(value){
-				return value.recipe;
+				var obj = value.recipe;
+				obj.plan = plan;
+				obj.familyPlan = plan === 'family_plan' ? true : false;
+				return obj;
 			});
 			return new app.RecipeCollection(recipes);
 		},

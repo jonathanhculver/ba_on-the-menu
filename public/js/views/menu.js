@@ -15,7 +15,8 @@ var app = app || {};
 			'click .week_nav_right'			: 	'nextWeek',
 			'click .week_nav_left' 			: 	'previousWeek',
 			'click .planDateContainer'		: 	'showDropdown',
-			'click .dropdown_row'			: 	'selectWeek'
+			'click .dropdown_row'			: 	'selectWeek',
+			'click .plan_btn'				: 	'selectPlan'
 		},
 
 		constructor: function() {
@@ -47,7 +48,7 @@ var app = app || {};
 		},
 
 		renderFilters: function(index) {
-			var weeks = this.collection.getWeeks(index);
+			var weeks = this.collection.getWeeks(index, this.plan);
 			this.setView(".filters", new app.FiltersView({
 				collection: weeks,
 				model: weeks.models[index]
@@ -77,6 +78,22 @@ var app = app || {};
 				index = row.attributes['data-rowindex'].value;
 			this.week = index;
 			this.renderRecipes(this.plan, index);
+		},
+
+		selectPlan: function(e) {
+			var button = e.currentTarget,
+				plan = button.attributes['data-type'].value;
+
+			$('.plan_btn').each(function(index, value){
+				if(value.getAttribute('data-type') !== plan) {
+					$(value).addClass('btn_grey');
+				} else {
+					$(value).removeClass('btn_grey');
+				}
+			});
+
+			this.plan = plan;
+			this.renderRecipes(this.plan, this.week);
 		}
 
 		// showLoading: function() {
