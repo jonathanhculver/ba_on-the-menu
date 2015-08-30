@@ -121,6 +121,62 @@
 		margin-left: auto;
 	}
 
+	.social_container, .blog_container {
+		display:none;
+	}
+
+	.email_signup {
+		border: none !important;
+		margin-left: 0px !important;
+	}
+
+	.connected {
+		padding-bottom: 15px;
+		margin-top: 10px !important;
+		border-bottom: 1px solid #595d80 !important;
+	}
+
+	.footer_container {
+		height: 600px !important;
+	}
+
+	.social_mobile_container {
+		display:block !important;
+		margin-top: 5px;
+	}
+
+	.social_mobile_container .social_icons {
+		width: 100% !important;
+		text-align: center;
+	}
+
+	.social_mobile_container .social_icon {
+		margin-right: 15%;
+	}
+
+	.email_form input {
+		width: 200px !important;
+	}
+
+	.footer_bottom_mobile_container {
+		display: block !important;
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.footer_bottom_mobile_container .bottom {
+		margin-top: 20px;
+	}
+
+	.footer_bottom_mobile_container .link a{
+		color: #ccc;
+		font-size: 12px;
+		margin-right: 3%;
+	}
+
+	.footer_bottom {
+		display:none;
+	}
 
 }
 
@@ -574,7 +630,7 @@
 	font-style: normal;
 	font-family: "Helvetica Neue";
 	float: left;
-	width: 150px;
+	width: 60%;
 	text-align: left;
 	margin-left: 10px;
 	line-height: 1.2;
@@ -603,13 +659,12 @@
 	border: 0 none transparent;
 	border-radius: 4px 0 0 4px;
 	box-sizing: content-box;
-	float: left;
 	font-family: "Helvetica Neue";
 	height: 20px;
 	line-height: 20px;
 	margin-top: 0;
 	padding: 10px 15px;
-	width: 245px;	
+	width: 230px;	
 	font-style: normal;
 	font-weight: 400;
 	color: #333;
@@ -622,16 +677,16 @@
 	border: 0 none transparent;
 	border-radius: 0 4px 4px 0;
 	box-shadow: 0 0 0 transparent;
-	float: left;
 	font-family: "Helvetica Neue";
 	font-size: 15px;
 	font-weight: 700;
 	height: 40px;
 	line-height: 20px;
-	margin-top: 0;
 	padding: 10px 15px;
 	width: 55px;
 	color: #FFF;
+	margin-left: -5px;
+	margin-top: -2px;
 }
 
 .email_form .btn:hover {
@@ -673,7 +728,7 @@
 	display: inline-block;
 	color: #9e9e9e;
 	font-size: 14px;
-	margin-right: 15px;
+	margin-right: 10px;
 	font-weight: 400;
 }
 
@@ -695,6 +750,14 @@
 	text-align: right;
 }
 
+.social_mobile_container {
+	display:none;
+}
+
+
+.footer_bottom_mobile_container {
+	display: none;
+}
 
 
 
