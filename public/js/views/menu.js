@@ -21,12 +21,12 @@ var app = app || {};
 
 		constructor: function() {
 			Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
+			//for functional scoping 
 			var self = this;
 
 			this.week = 0;
 			this.plan = 'two_person_plan';
 
-			// this.showLoading();
 			// create collection of recipes, pulled from the api
 			this.collection = new app.RecipeCollection();
 			this.collection.fetch({
@@ -45,6 +45,7 @@ var app = app || {};
 			}));	
 			this.renderFilters(index);
 			this.render();
+			this.hideLoading();
 		},
 
 		renderFilters: function(index) {
@@ -53,7 +54,6 @@ var app = app || {};
 				collection: weeks,
 				model: weeks.models[index]
 			}));	
-			this.render();
 		},
 
 		nextWeek: function() {
@@ -76,6 +76,7 @@ var app = app || {};
 		selectWeek: function(e) {
 			var row = e.currentTarget,
 				index = row.attributes['data-rowindex'].value;
+			//update current week selected
 			this.week = index;
 			this.renderRecipes(this.plan, index);
 		},
@@ -92,17 +93,13 @@ var app = app || {};
 				}
 			});
 
+			//update current plan selected
 			this.plan = plan;
 			this.renderRecipes(this.plan, this.week);
+		},
+
+		hideLoading: function() {
+			$('#loading').hide();
 		}
-
-		// showLoading: function() {
-		// 	var loading = $('#loading').html();
-		// 	this.$el.html('blah');
-		// },
-
-		// removeLoading: function() {
-		// 	this.$el.removeClass('loading');
-		// }
 	});
 })();
