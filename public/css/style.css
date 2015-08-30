@@ -453,7 +453,7 @@
 	background-color: #313567;
 	color: #ccc;
 	font-family: "Helvetica Neue";
-	height: 300px;
+	height: 290px;
 	margin-top: 30px;
 }
 
@@ -656,6 +656,44 @@
 	font-family: "Arvo";
 }
 
+.footer_bottom {
+	background: #ccc url("http://media.blueapron.com/assets/footer/bg-footer-7fa467bb317c2696e4c3a51ff2a8cc20.png") repeat scroll left top;
+	color: #9e9e9e;
+	font-family: "HelveticaNeue","Helvetica Neue","HelveticaNeueRoman","HelveticaNeue-Roman","Helvetica Neue Roman","TeXGyreHerosRegular","Helvetica","Tahoma","Geneva","Arial",sans-serif;
+	line-height: 33px;
+	margin-top: 0px;
+	padding: 18px 0;
+}
+
+.footer_bottom .container {
+	margin-top: 0;
+}
+
+.footer_bottom .link {
+	display: inline-block;
+	color: #9e9e9e;
+	font-size: 14px;
+	margin-right: 15px;
+	font-weight: 400;
+}
+
+.footer_bottom .link a {
+	color: #9e9e9e;
+}
+
+.footer_bottom .link a:hover {
+	color: #9e9e9e;
+}
+
+.footer_bottom .left {
+	width: 50%;
+	float: left;
+}
+
+.footer_bottom .right {
+	width: 30%;
+	text-align: right;
+}
 
 
 
