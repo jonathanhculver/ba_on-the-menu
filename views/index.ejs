@@ -70,7 +70,7 @@
 
 		<script type="text/x-handlebars-template" id="filters">
 			<div class="filtersNav">
-				<h2 class="align_c">What we're cooking the week of 
+				<h2 class="align_c">{{ title }} 
 					<span class="planDateContainer">
 						<span id="planDate">{{ dateFormatted }}</span>
 						<span class="arrow_down"></span>
@@ -101,7 +101,7 @@
 
 		<script type="text/x-handlebars-template" id="recipe">
 			<a class="recipeLink" href="http://blueapron.com/recipes/{{ slug }}">
-				<img class="recipeImg" src="{{ c_main_dish_image.high_feature }}"/>
+				<img class="recipeImg" src="{{ high_menu_thumb_url }}"/>
 				{{#if vegetarian}}
 				<div class="veggieLeaf">
 					<img src="http://res.cloudinary.com/hn5egfnw4/image/upload/v1437958774/veggie_tadrr8.png" />

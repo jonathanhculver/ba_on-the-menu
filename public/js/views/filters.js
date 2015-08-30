@@ -16,6 +16,8 @@ var app = app || {};
 		constructor: function() {
 			Backbone.Viewmaster.prototype.constructor.apply(this, arguments);
 
+			this.model.attributes.title = 'What we\'re cooking the week of';
+
 			this.setView('.dropdown', new app.DropdownView({
 				collection: this.collection
 			}));
